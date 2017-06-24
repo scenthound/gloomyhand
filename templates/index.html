@@ -3,21 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Gloomyhand</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.2/react.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.2/JSXTransformer.js"></script>
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.2/react.min.js"></script> -->
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.2/JSXTransformer.js"></script> -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react-dom.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react.js"></script>
 </head>
 <body>
      <div id="welcome"></div>
+     <img src="{{url_for('static', filename='ph.png')}}">
 </body>
 
   <script type="text/jsx">
      /*** @jsx React.DOM */
     var WelcomeComponent = React.createClass({
         render: function() {
-            return (<p1>Welcome to the Gloomhaven Hand Builder!</p1>);
+            return (<p1>Welcome to the Gloomhaven Hand Builder! {{message}}</p1>);
         }
     });
-    React.render(<WelcomeComponent />, document.getElementById('welcome') );
+    ReactDOM.render(<WelcomeComponent />, document.getElementById('welcome') );
      </script>
 
 </html>
