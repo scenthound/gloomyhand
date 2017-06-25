@@ -3,26 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>Gloomyhand</title>
-<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.2/react.min.js"></script> -->
-<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.2/JSXTransformer.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react-dom.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
 </head>
 <body>
-     <div id="welcome"></div>
-     <img src="{{url_for('static', filename='images/ph/ph-289.png')}}">
-     <img src="{{url_for('static', filename='images/ph/ph-290.png')}}">
+     <div id="mount-banner"></div>
+     <div id="mount-cards"></div>
 </body>
 
   <script type="text/jsx">
      /*** @jsx React.DOM */
-    var WelcomeComponent = React.createClass({
+    var Banner = React.createClass({
         render: function() {
             return (<p1>Welcome to the Gloomhaven Hand Builder! {{message}}</p1>);
         }
     });
-    ReactDOM.render(<WelcomeComponent />, document.getElementById('welcome') );
+
+    var Cards = React.createClass({
+        render: function() {
+          return (<img src={"{{url_for('static', filename='images/ph/ph-289.png')}}"} />);
+        }
+    });
+
+    ReactDOM.render(<Banner />, document.getElementById('mount-banner'));
+    ReactDOM.render(<Cards />, document.getElementById('mount-cards'));
      </script>
 
 </html>
